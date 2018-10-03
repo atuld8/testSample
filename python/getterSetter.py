@@ -1,0 +1,28 @@
+class TestGetterSetter(object):
+    def __init__(self):
+        self._x = None
+
+    @property
+    def x(self):
+        """I'm the 'x' property."""
+        print("getter of x called")
+        return self._x
+
+    @x.setter
+    def x(self, value):
+        print("setter of x called")
+        self._x = value
+
+    @x.deleter
+    def x(self):
+        print("deleter of x called")
+        del self._x
+
+
+obj = TestGetterSetter()
+
+obj.x = 'foo'  # setter called
+
+foo = obj.x    # getter called
+
+del obj.x      # deleter called
