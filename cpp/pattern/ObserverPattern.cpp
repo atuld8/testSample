@@ -10,13 +10,14 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
- *   Organization:  
+ *         Author:  YOUR NAME (),
+ *   Organization:
  *
  * =====================================================================================
  */
 
 #include <stdio.h>
+#include <unistd.h>
 #include <iostream>
 #include <vector>
 #include <string>
@@ -52,9 +53,10 @@ class Loan : public Subject {
       }
 
       virtual void deregisterObserver(Observer *observer) {
-         vector<Observer*>::iterator it = find(m_observerList.begin(), m_observerList.end(),observer);
-         if (it != m_observerList.end()) 
-            m_observerList.erase(it);
+         //vector<Observer*>::iterator it = std::find(m_observerList.begin(), m_observerList.end(),static_cast<const Observer *>(observer));
+         for(vector<Observer *>::iterator it = m_observerList.begin(); it != m_observerList.end(); it++)
+             if (*it == observer)
+                m_observerList.erase(it);
 
       }
 
@@ -134,13 +136,13 @@ class Observer1: public LoanObserver {
       }
 
       virtual void update(Subject * sub) {
-         cerr << "notificatioon for Observer1: " << " from " << static_cast<Loan *>(sub)->type() << " about rate change " << static_cast<Loan *>(sub)->getData() << endl;
+         cerr << "notification for Observer1: " << " from " << static_cast<Loan *>(sub)->type() << " about rate change " << static_cast<Loan *>(sub)->getData() << endl;
       }
 
       virtual void printDataAndType () {
          //cout << "\033[2J\033[1;1H";
          cout << endl;
-         cout << "Observer1:" << endl; 
+         cout << "Observer1:" << endl;
          LoanObserver::printDataAndType();
       }
 };
@@ -153,7 +155,7 @@ class Observer2: public LoanObserver {
       }
 
       virtual void update(Subject * sub) {
-         cerr << "notificatioon for Observer2: " << " from " << static_cast<Loan *>(sub)->type() << " about rate change " << static_cast<Loan *>(sub)->getData() << endl;
+         cerr << "notification for Observer2: " << " from " << static_cast<Loan *>(sub)->type() << " about rate change " << static_cast<Loan *>(sub)->getData() << endl;
       }
 
 };
@@ -166,7 +168,7 @@ class Observer3: public LoanObserver {
       }
 
       virtual void update(Subject * sub) {
-         cerr << "notificatioon for Observer3: " << " from " << static_cast<Loan *>(sub)->type() << " about rate change " << static_cast<Loan *>(sub)->getData() << endl;
+         cerr << "notification for Observer3: " << " from " << static_cast<Loan *>(sub)->type() << " about rate change " << static_cast<Loan *>(sub)->getData() << endl;
       }
 
 };
@@ -181,11 +183,11 @@ void Loan::notify() {
 }
 
 int main() {
-   
+
    //Loan           * loan = new Loan();
    HomeLoan       * homeloan     = new HomeLoan();
    CarLoan        * carloan      = new CarLoan();
-   PersonalLoan   * personalloan = new PersonalLoan();  
+   PersonalLoan   * personalloan = new PersonalLoan();
 
    class Observer1 * ob1   = new Observer1();
    class Observer2 * ob2   = new Observer2();
@@ -214,7 +216,7 @@ int main() {
    carloan->registerObserver(ob3);
 
    int pid = fork();
-   if (pid == 0) 
+   if (pid == 0)
    {
        int count = 4;
        while (count--) {
@@ -231,6 +233,7 @@ int main() {
       carloan->setData(30);
       sleep (1);
       ob1->printDataAndType();
+      sleep(5);
    }
 
    return 0;
