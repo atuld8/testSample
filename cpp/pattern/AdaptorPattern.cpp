@@ -29,7 +29,7 @@ class Interface {
 class newClass : public Interface {
     public:
         void printData() {
-            printf("transfering call to oldClass to perform task\n");
+            printf("Transfering call to oldClass object to perform the task\n");
             oc.print_the_data();
         }
 
@@ -39,7 +39,7 @@ class newClass : public Interface {
 
 int main() {
     Interface * interface = new newClass();
-    
+
     interface->printData();
 
     delete interface;
