@@ -4,11 +4,13 @@
  *       Filename:  DecoratorPattern.cpp
  *
  *    Description:  Decorator pattern is to add additional behaviour to existing object dynamically without affecting the other instance of the same class.
- *                  Example: Pizza could be different types depending on the base but the same types can have different topings.
+ *                  Example: Pizza could be different types depending on the base but the same types can have different toppings.
  *                  This allow user to add extra decoration to existing pizza types.
  *
  *                  Pizza could be: ThinCrust, FlatBread, CheeseBust, Greek
- *                  Toping could be: Tomato, Paneer, chicken, Jalapeno
+ *                  Topping could be: Tomato, Paneer, Chicken, Jalapeno
+ *
+ *                  Reference: http://www.geeksforgeeks.org/about/interview-corner/
  *
  *        Version:  1.0
  *        Created:  10/16/18 00:02:21
@@ -26,7 +28,7 @@
 
 using namespace std;
 
-/* This is the base class, from which all the type of pizza and topings class derived*/
+/* This is the base class, from which all the type of pizza and toppings class derived*/
 class Pizza {
     public:
         virtual string getDescription () {
@@ -35,12 +37,14 @@ class Pizza {
 
         virtual int cost () = 0;
 
+        virtual ~Pizza() { }
+
     protected:
         string m_strName;
 };
 
-/* This is toping class derived from pizza so that it holds pizza for decoration */
-class Topings: public Pizza {
+/* This is topping class derived from pizza so that it holds pizza for decoration */
+class Toppings: public Pizza {
      public:
          virtual string getDescription () = 0;
          virtual int cost () = 0;
@@ -82,8 +86,8 @@ class Greek : public Pizza {
 
 
 
-/* Implementation for the Toping types */
-class Tomato : public Topings {
+/* Implementation for the Topping types */
+class Tomato : public Toppings {
     public:
         Tomato (Pizza * pPizza) : m_pPizza (pPizza) {}
 
@@ -97,7 +101,7 @@ class Tomato : public Topings {
          Pizza *m_pPizza;
 };
 
-class Paneer : public Topings {
+class Paneer : public Toppings {
     public:
         Paneer (Pizza * pPizza) : m_pPizza (pPizza) {}
 
@@ -111,7 +115,7 @@ class Paneer : public Topings {
          Pizza *m_pPizza;
 };
 
-class Chicken : public Topings {
+class Chicken : public Toppings {
     public:
         Chicken (Pizza * pPizza) : m_pPizza (pPizza) {}
 
@@ -125,7 +129,7 @@ class Chicken : public Topings {
          Pizza *m_pPizza;
 };
 
-class Jalapeno : public Topings {
+class Jalapeno : public Toppings {
     public:
         Jalapeno (Pizza * pPizza) : m_pPizza (pPizza) {}
 
