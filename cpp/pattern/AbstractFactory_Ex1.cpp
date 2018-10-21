@@ -11,9 +11,6 @@
  *       Revision:  none
  *       Compiler:  g++ -DROBUST AbstractFactory_Ex1.cpp
  *
- *         Author:  YOUR NAME (), 
- *   Organization:  
- *
  * =====================================================================================
  */
 

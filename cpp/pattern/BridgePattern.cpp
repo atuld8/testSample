@@ -8,8 +8,6 @@
 
    * Last Modified : Mon, Jan 12, 2015  9:20:39 AM
 
-   * Created By : Atul_Das
-
    * Bridge between implementation and interfaces
    _._._._._._._._._._._._._._._._._._._._._.*/
 #include <stdio.h>

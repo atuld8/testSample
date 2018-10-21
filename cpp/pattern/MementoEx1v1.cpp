@@ -10,9 +10,6 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  Atul Das (adas), atul.das1@
- *   Organization:
- *
  * =====================================================================================
  */
 #include <stdlib.h>

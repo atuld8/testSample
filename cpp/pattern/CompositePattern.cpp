@@ -8,8 +8,6 @@
 
    * Last Modified : Sun, Jan 11, 2015  7:00:30 PM
 
-   * Created By : Atul_Das
-
    * This pattern represent tree structure data or objects like xml, directory
    _._._._._._._._._._._._._._._._._._._._._.*/
 #include <stdio.h>

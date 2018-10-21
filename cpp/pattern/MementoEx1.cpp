@@ -9,10 +9,6 @@
  *        Created:  11/18/2016 21:00:52
  *       Revision:  none
  *       Compiler:  gcc
- *
- *         Author:  Atul Das (adas), atul.das1@
- *   Organization:
- *
  * =====================================================================================
  */
 #include <stdlib.h>

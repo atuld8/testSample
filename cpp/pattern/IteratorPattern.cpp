@@ -13,9 +13,6 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  Atul Das (ad), atuldas.ind@gmail.com
- *   Organization:  Anonymus private company ltd.
- *
  * =====================================================================================
  */
 #include <stdlib.h>

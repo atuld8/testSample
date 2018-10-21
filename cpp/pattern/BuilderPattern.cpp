@@ -8,11 +8,9 @@
 
    * Last Modified : Sun, Jan 11, 2015  2:49:45 PM
 
-   * Created By : Atul_Das
-
    * In BuilderPattern, we have builder class which has all the methods to build the product.
-   * In case of kid meals, he can knows what meal contents. Burger, kids toy, cold drink, fries. 
-   * receiver/construction class is resposible for algorithum to build the product 
+   * In case of kid meals, he can knows what meal contents. Burger, kids toy, cold drink, fries.
+   * receiver/construction class is resposible for algorithum to build the product
    _._._._._._._._._._._._._._._._._._._._._.*/
 #include <stdio.h>
 #include <string>
@@ -211,6 +209,6 @@ int main() {
 }
 
 
-/* 
+/*
 vim:set makeopt=g++\ %
  * */

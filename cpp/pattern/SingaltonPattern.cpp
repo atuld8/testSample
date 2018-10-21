@@ -8,8 +8,6 @@
 
    * Last Modified : Mon Mar  2 07:46:55 2015
 
-   * Created By : Atul_Das
-
    _._._._._._._._._._._._._._._._._._._._._.*/
 #include <stdio.h>
 #include <iostream>

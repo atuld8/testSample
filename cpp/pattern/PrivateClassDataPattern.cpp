@@ -12,9 +12,6 @@
  *       Revision:  none
  *       Compiler:  gcc
  *
- *         Author:  YOUR NAME (), 
- *   Organization:  
- *
  * =====================================================================================
  */
 #include <stdlib.h>
