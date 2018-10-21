@@ -56,7 +56,7 @@ class Command {
         Action m_method;
 };
 
-template <typename T> 
+template <typename T>
 class Queue {
     public:
         Queue() {
@@ -88,8 +88,8 @@ int main() {
     Command *input[] = {
         new Command(new Giant, &Giant::fee),
         new Command(new Giant, &Giant::phi),
-        new Command(new Giant, &Giant::pheaux), 
-        new Command(new Giant, &Giant::fee), 
+        new Command(new Giant, &Giant::pheaux),
+        new Command(new Giant, &Giant::fee),
         new Command(new Giant, &Giant::phi),
         new Command(new Giant, &Giant::pheaux)
     };
