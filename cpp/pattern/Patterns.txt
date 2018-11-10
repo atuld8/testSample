@@ -1,32 +1,32 @@
 Creational Patterns
-    Abstract factory
-    Builder
-    Factory method
-    Object pool
-    Prorotype
-    Singleton
+*    Abstract factory
+*    Builder
+*    Factory method
+*    Object pool
+*    Prorotype
+*    Singleton
 
 Structural Patterns
-    Adapter
-    Bridge
-    Composite
-    Decorator
-    Facade
-    Flyweight
-    Private class data
-    Proxy
+*    Adapter
+*    Bridge
+*    Composite
+*    Decorator
+*    Facade
+*    Flyweight
+*    Private class data
+*    Proxy
 
 
 Behavioral Patterns
-    Chain of responsibility
-    Command
+*    Chain of responsibility
+*    Command
     Interpreter
-    Iterator
-    Mediator
-    Memento
+*    Iterator
+*    Mediator
+*    Memento
     Null Object
-    Observer
-    State
+*    Observer
+*   State
     Strategy
     Termplate method
     Vistor
