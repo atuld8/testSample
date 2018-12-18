@@ -28,7 +28,7 @@ Behavioral Patterns
 *   Observer
 *   State
 *   Strategy
-*   Termplate method
+*   TemplateMethod
     Vistor
 
 

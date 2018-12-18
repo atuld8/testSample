@@ -24,26 +24,26 @@ using namespace std;
 
 class CGame {
     protected:
-        virtual void initializeGame () = 0;
-        virtual void startGame () = 0;
-        virtual void breakGame () = 0;
-        virtual void resumeGame () = 0;
-        virtual void endGame () = 0;
+        virtual void initialize () = 0;
+        virtual void start () = 0;
+        virtual void teaBreak() = 0;
+        virtual void resume() = 0;
+        virtual void end() = 0;
 
     public:
         void playGame () {
 
             cout << endl << endl << endl << "-------------------------------" << endl;
 
-            initializeGame ();
+            initialize ();
 
-            startGame ();
+            start ();
 
-            breakGame ();
+            teaBreak ();
 
-            resumeGame ();
+            resume ();
 
-            endGame ();
+            end ();
 
             cout << "-------------------------------" << endl;
         }
@@ -51,46 +51,46 @@ class CGame {
 
 class CCricket : public CGame {
 
-    virtual void initializeGame () {
+    virtual void initialize () {
         cout << "Cricket Game Initialized!" << endl;
     }
 
-    virtual void startGame () {
+    virtual void start () {
         cout << "Cricket Game Started!" << endl;
     }
 
-    virtual void breakGame () {
-        cout << "Break in the Cricket Game !" << endl;
+    virtual void teaBreak () {
+        cout << "Tea Break in the Cricket Game !" << endl;
     }
 
-    virtual void resumeGame () {
+    virtual void resume () {
         cout << "Cricket Game resumed!" << endl;
     }
 
-    virtual void endGame () {
+    virtual void end () {
         cout << "Cricket Game End!" << endl;
     }
 };
 
 class CFootball : public CGame {
 
-    virtual void initializeGame () {
+    virtual void initialize () {
         cout << "Football Game Initialized!" << endl;
     }
 
-    virtual void startGame () {
+    virtual void start () {
         cout << "Football Game Started!" << endl;
     }
 
-    virtual void breakGame () {
-        cout << "Break in the Football Game !" << endl;
+    virtual void teaBreak () {
+        cout << "Tea Break in the Football Game !" << endl;
     }
 
-    virtual void resumeGame () {
+    virtual void resume () {
         cout << "Football Game resumed!" << endl;
     }
 
-    virtual void endGame () {
+    virtual void end () {
         cout << "Football Game End!" << endl;
     }
 };
