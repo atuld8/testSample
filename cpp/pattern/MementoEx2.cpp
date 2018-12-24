@@ -41,13 +41,13 @@ class COriginator {
         }
 
         CMemento * saveToMemento() {
-            std::cout << "Originator: saving data to memento" << m_strData << std::endl;
+            std::cout << "Originator: saving data to memento " << m_strData << std::endl;
             return new CMemento(m_strData);
         }
 
         void restoreFromMemento ( CMemento *m) {
             m_strData = m->getDataState();
-            std::cout << "Originator: restoring data from memento" << m_strData << std::endl;
+            std::cout << "Originator: restoring data from memento " << m_strData << std::endl;
         }
 
    private:
@@ -70,10 +70,10 @@ class CCaretaker {
 };
 
 int main () {
-    auto CCaretaker * ct = new CCaretaker ();
+    CCaretaker * ct = new CCaretaker ();
 
 
-    auto COriginator * org = new COriginator();
+    COriginator * org = new COriginator();
 
     org->set("state1");
     org->set("state2");
