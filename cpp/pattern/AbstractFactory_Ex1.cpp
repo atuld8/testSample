@@ -9,7 +9,7 @@
  *        Version:  1.0
  *        Created:  06/07/2016 09:05:55
  *       Revision:  none
- *       Compiler:  g++ -DROBUST AbstractFactory_Ex1.cpp
+ *       Compiler:  g++ -DROBUST -o AbstractFactory_Ex1.exe AbstractFactory_Ex1.cpp
  *
  * =====================================================================================
  */
@@ -81,19 +81,22 @@ class RobustShapeFactory : public Factory {
 };
 
 int main() {
-#ifdef SIMPLE
-    Factory* factory = new SimpleShapeFactory;
+    Factory* factory = NULL;
+# ifdef SIMPLE
+    factory = new SimpleShapeFactory;
 #elif ROBUST
-    Factory* factory = new RobustShapeFactory;
+    factory = new RobustShapeFactory;
 #endif
     Shape* shapes[3];
 
-    shapes[0] = factory->createCurvedInstance();   // shapes[0] = new Ellipse;
-    shapes[1] = factory->createStraightInstance(); // shapes[1] = new Rectangle;
-    shapes[2] = factory->createCurvedInstance();   // shapes[2] = new Ellipse;
+    if (factory) {
+        shapes[0] = factory->createCurvedInstance();   // shapes[0] = new Ellipse;
+        shapes[1] = factory->createStraightInstance(); // shapes[1] = new Rectangle;
+        shapes[2] = factory->createCurvedInstance();   // shapes[2] = new Ellipse;
 
-    for (int i=0; i < 3; i++) {
-        shapes[i]->draw();
+        for (int i=0; i < 3; i++) {
+            shapes[i]->draw();
+        }
     }
 }
 
