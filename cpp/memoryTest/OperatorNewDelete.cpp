@@ -93,7 +93,7 @@ void operator delete (void * pointer) {
 
 
 int main() {
-    CStudent  * pStudent  = new CStudent ("student1", 18);
+    CStudent  * pStudent  = new CStudent ((char * )"student1", 18);
     CEmployee * pEmployee = new CEmployee ("Employee1", 10);
 
     pStudent->display ();
