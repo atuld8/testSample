@@ -152,7 +152,7 @@ int main(int argc, char *arv[]) {
     cout << "Smart phone from HTC     : " << factory->GetSmart()->Name() << endl;
     delete factory;
 
-    factory = APhoneFactory::CreateFactory(APhoneFactory::PHONE_FACTORIES::SAMSUNG);
+    factory = APhoneFactory::CreateFactory(APhoneFactory::PHONE_FACTORIES::NOKIA);
     cout << "Dump  phone from NOKIA   : " << factory->GetDump()->Name() << endl;
     cout << "Smart phone from NOKIA   : " << factory->GetSmart()->Name() << endl;
     delete factory;
