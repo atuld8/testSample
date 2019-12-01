@@ -129,5 +129,3 @@ int main () {
     printf ("%d size of vector\n", static_cast<int> (filevector.size ()));
     return 0;
 }
-
-
