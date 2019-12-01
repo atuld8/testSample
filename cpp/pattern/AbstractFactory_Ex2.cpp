@@ -86,6 +86,9 @@ class APhoneFactory {
             NOKIA
         };
 
+    virtual ~APhoneFactory() {
+    }
+
     virtual SmartInterface* GetSmart() = 0;
     virtual DumpInterface*  GetDump()  = 0;
 
@@ -116,7 +119,7 @@ class HTCFactory: public APhoneFactory {
         }
 };
 
-class NOKIAFacotry: public APhoneFactory {
+class NOKIAFactory: public APhoneFactory {
     public:
         SmartInterface* GetSmart() {
             return new Lumia();
@@ -135,7 +138,7 @@ APhoneFactory*  APhoneFactory::CreateFactory(PHONE_FACTORIES factory) {
             return new HTCFactory();
         else
             if (factory == PHONE_FACTORIES::NOKIA)
-                return new NOKIAFacotry();
+                return new NOKIAFactory();
 
     return NULL;
 }

@@ -10,7 +10,7 @@
 
    * In BuilderPattern, we have builder class which has all the methods to build the product.
    * In case of kid meals, he can knows what meal contents. Burger, kids toy, cold drink, fries.
-   * receiver/construction class is resposible for algorithum to build the product
+   * receiver/construction class is resposible for algorithm to build the product
    _._._._._._._._._._._._._._._._._._._._._.*/
 #include <stdio.h>
 #include <string>
@@ -198,13 +198,13 @@ int main() {
     AnimalToyBuilder * atb = new MonkeyAnimalToyBuilder();
     Kid kid("Reva", atb);
     kid.makeToy();
-    printf ("kid %s has builde the Monkey\n", kid.getName().c_str());
+    printf ("kid %s has built the Monkey\n", kid.getName().c_str());
     atb->getresult()->showresult();
 
     AnimalToyBuilder * atb1 = new KittyAnimalToyBuilder();
     kid.SetAnimalToyBuilder(atb1);
     kid.makeToy();
-    printf ("kid %s has builde the Kitty\n", kid.getName().c_str());
+    printf ("kid %s has built the Kitty\n", kid.getName().c_str());
     atb1->getresult()->showresult();
 }
 
