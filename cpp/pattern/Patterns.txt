@@ -1,9 +1,9 @@
-Creational Patterns
+Creation Patterns
 *   Abstract factory
 *   Builder
 *   Factory method
 *   Object pool
-*   Prorotype
+*   Prototype
 *   Singleton
 
 Structural Patterns
@@ -29,6 +29,6 @@ Behavioral Patterns
 *   State
 *   Strategy
 *   TemplateMethod
-    Vistor
+    Visitor
 
 

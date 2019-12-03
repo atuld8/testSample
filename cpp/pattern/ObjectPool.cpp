@@ -5,7 +5,7 @@
  *
  *    Description: This is example of Object pool pattern
  *
- *                 key notes: implemented as signleton class and it creates the objects and manage the pool
+ *                 key notes: implemented as singleton class and it creates the objects and manage the pool
  *
  *        Version:  1.0
  *        Created:  11/17/2016 08:57:41
@@ -42,7 +42,7 @@ class ObjectPoolPatter {
  *  Description:  
  * =====================================================================================
  */
-    int
+int
 main ( int argc, char *argv[] )
 {
 
