@@ -1,0 +1,24 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++.exe build active file",
+            "command": "C:\\Atul\\msys64\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-Wall",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\Build\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\Atul\\msys64\\mingw64\\bin"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
