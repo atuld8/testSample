@@ -25,6 +25,9 @@ enum FanType {
 
 class IFan {
     public:
+        virtual ~IFan () {
+        }
+
         virtual void switchOn()  = 0;
         virtual void switchOff() = 0;
 };
@@ -64,12 +67,16 @@ class CExhaustFan : public IFan {
 
 class IFanFactory {
     public:
+        virtual ~IFanFactory() {
+
+        }
+
         virtual IFan * createFan(FanType fantype) = 0;
 };
 
-// This is simple factory clas which takes decision for creation of any
+// This is simple factory class which takes decision for creation of any
 // product object
-// Difference bewtween Simple Factory and Factory method pattern is the creation is also
+// Difference between Simple Factory and Factory method pattern is the creation is also
 // delayed to sub classes. so that we not need to modify the createFan method for each time.
 // client will get it depending on call.
 class SimpleFanFactory : public IFanFactory {
@@ -82,9 +89,9 @@ class SimpleFanFactory : public IFanFactory {
                     return new CCeilingFan();
                 case FanType::ExhaustFan:
                     return new CExhaustFan();
-                default:
-                    return NULL;
             }
+
+            return NULL;
         }
 };
 
@@ -94,6 +101,9 @@ int main() {
     IFan * fan = fanfactory->createFan(FanType::TableFan);
 
     fan->switchOn();
+
+    delete (fan);
+    delete (fanfactory);
 
     return 0;
 }

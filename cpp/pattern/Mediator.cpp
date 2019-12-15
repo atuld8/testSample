@@ -41,6 +41,9 @@ class Widget {
             _name     = name;
         }
 
+        virtual ~Widget() {
+        }
+
         virtual void changed ();
         virtual void updateWidget () = 0;
         virtual void queryWidget  ()  = 0;
@@ -100,7 +103,7 @@ class FileSelectionDialog {
         }
 
         ~FileSelectionDialog () {
-            for (int i = 0; i < WidgetTypeCount; i++)
+            for (size_t i = 0; i < WidgetTypeCount; i++)
                 delete _component [i];
         }
 
@@ -147,7 +150,7 @@ void Widget::changed () {
 int main () {
     FileSelectionDialog fileSelectionDialog;
 
-    //Below are the sequence of events occured
+    //Below are the sequence of events occurred
 
     //1. After opening the dialog box, user changed the filter
     cout << "FileSelectionDialog is opened...." << endl;

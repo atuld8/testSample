@@ -16,7 +16,6 @@ Structural Patterns
 *   Private class data
 *   Proxy
 
-
 Behavioral Patterns
 *   Chain of responsibility
 *   Command
@@ -30,5 +29,4 @@ Behavioral Patterns
 *   Strategy
 *   TemplateMethod
     Visitor
-
 
