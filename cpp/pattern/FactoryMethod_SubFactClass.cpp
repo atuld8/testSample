@@ -21,6 +21,8 @@ using namespace std;
 
 class CFan {
     public:
+        virtual ~CFan() { }
+
         virtual void test_operation() = 0;
 };
 
@@ -41,6 +43,8 @@ class CCeilingFan : public CFan {
 
 class CFanFactory {
     public:
+        virtual ~CFanFactory() { }
+
         virtual CFan * getFan() = 0;
 };
 
@@ -62,9 +66,23 @@ int main() {
 
     CFanFactory *ff = new CCeilingFanFactory();
 
+    if (ff == NULL) {
+        std::cout << "Error: Failed to create CFanFactory instance" << std::endl;
+        return -1;
+    }
+
     CFan * fan = ff->getFan();
 
+    if (fan == NULL) {
+        std::cout << "Error: Failed to get the fan instance" << std::endl;
+        delete (ff);
+        return -1;
+    }
+
     fan->test_operation();
+
+    delete (fan);
+    delete (ff);
 
     return 0;
 }
