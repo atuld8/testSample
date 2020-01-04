@@ -72,6 +72,9 @@ class KittyAnimal: public Animal {
 
 class AnimalToyBuilder {
     public:
+        virtual ~AnimalToyBuilder() {
+        }
+
         virtual void BuildAnimalHead() = 0;
         virtual void BuildAnimalBody() = 0;
         virtual void BuildAnimalLeg() = 0;
@@ -201,12 +204,14 @@ int main() {
     kid.makeToy();
     printf ("kid %s has built the Monkey\n", kid.getName().c_str());
     atb->getresult()->showresult();
+    delete atb;
 
     AnimalToyBuilder * atb1 = new KittyAnimalToyBuilder();
     kid.SetAnimalToyBuilder(atb1);
     kid.makeToy();
     printf ("kid %s has built the Kitty\n", kid.getName().c_str());
     atb1->getresult()->showresult();
+    delete atb1;
 }
 
 

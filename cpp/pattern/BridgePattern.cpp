@@ -28,34 +28,34 @@ class FileInfoImp {
 
 class UnixFileInfoImp : public FileInfoImp {
          virtual int getSize() {
-             printf("return size for Unix file\n");
+             printf("Return size for Unix file\n");
              return 1;
          }
 
          virtual string getName() {
-             printf("return name for Unix file\n");
+             printf("Return name for Unix file\n");
              return "Unix file Name";
          }
 
          virtual int getPermission() {
-             printf("return permission for Unix file\n");
+             printf("Return permission for Unix file\n");
              return 1;
          }
 };
 
 class WinFileInfoImp : public FileInfoImp {
          virtual int getSize() {
-             printf("return size for Win file\n");
+             printf("Return size for Win file\n");
              return 1;
          }
 
          virtual string getName() {
-             printf("return name for Win file\n");
+             printf("Return name for Win file\n");
              return "Unix file Name";
          }
 
          virtual int getPermission() {
-             printf("return permission for Win file\n");
+             printf("Return permission for Win file\n");
              return 1;
          }
 };

@@ -22,11 +22,17 @@ using namespace std;
 // Abstract Product
 class SmartInterface {
     public:
+        virtual ~SmartInterface() {
+        }
+
         virtual string Name() = 0;
 };
 
 class DumpInterface {
     public:
+        virtual ~DumpInterface() {
+        }
+
         virtual string Name() = 0;
 };
 
@@ -143,22 +149,27 @@ APhoneFactory*  APhoneFactory::CreateFactory(PHONE_FACTORIES factory) {
     return NULL;
 }
 
+void createInstanceOfEachBrandAndPrintDumpSmartModel(APhoneFactory::PHONE_FACTORIES phoneFactoryId, string phoneFactoryName) {
+
+    APhoneFactory* factory = APhoneFactory::CreateFactory(phoneFactoryId);
+    SmartInterface* smart  = factory->GetSmart();
+    DumpInterface*  dump   = factory->GetDump();
+
+    cout << "Dump  phone from " << phoneFactoryName.c_str() << " : " << dump->Name().c_str() << endl;
+    cout << "Smart phone from " << phoneFactoryName.c_str() << " : " << smart->Name().c_str() << endl;
+
+    delete smart;
+    delete dump;
+    delete factory;
+}
+
 int main(int argc, char *arv[]) {
-    APhoneFactory* factory = APhoneFactory::CreateFactory(APhoneFactory::PHONE_FACTORIES::SAMSUNG);
-    cout << "Dump  phone from Samsung : " << factory->GetDump()->Name() << endl;
-    cout << "Smart phone from Samsung : " << factory->GetSmart()->Name() << endl;
-    delete factory;
 
+    createInstanceOfEachBrandAndPrintDumpSmartModel(APhoneFactory::PHONE_FACTORIES::SAMSUNG, "Samsung");
 
-    factory = APhoneFactory::CreateFactory(APhoneFactory::PHONE_FACTORIES::HTC);
-    cout << "Dump  phone from HTC     : " << factory->GetDump()->Name() << endl;
-    cout << "Smart phone from HTC     : " << factory->GetSmart()->Name() << endl;
-    delete factory;
+    createInstanceOfEachBrandAndPrintDumpSmartModel(APhoneFactory::PHONE_FACTORIES::HTC, "HTC");
 
-    factory = APhoneFactory::CreateFactory(APhoneFactory::PHONE_FACTORIES::NOKIA);
-    cout << "Dump  phone from NOKIA   : " << factory->GetDump()->Name() << endl;
-    cout << "Smart phone from NOKIA   : " << factory->GetSmart()->Name() << endl;
-    delete factory;
+    createInstanceOfEachBrandAndPrintDumpSmartModel(APhoneFactory::PHONE_FACTORIES::NOKIA, "NOKIA");
 
     return 0;
 }
