@@ -1,4 +1,5 @@
 {
     "editor.fontSize": 11,
-    "terminal.integrated.fontSize": 11
+    "terminal.integrated.fontSize": 11,
+    "C_Cpp.errorSquiggles": "Disabled"
 }
